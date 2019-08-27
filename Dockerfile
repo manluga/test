@@ -1,7 +1,15 @@
 FROM centos
 
-RUN yum install httpd -y 
+MAINTAINER "herve mory mory@ch.ibm.com"
 
-COPY ./test.html /var/www/html 
+LABEL "Test podman Dockerfile" 
+
+RUN yum install httpd -y
+
+COPY ./index.html /var/www/html
+
+#USER apache
+
+EXPOSE 80 
 
 ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
