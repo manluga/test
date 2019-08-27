@@ -6,7 +6,7 @@ LABEL "Test podman Dockerfile"
 
 RUN yum install httpd -y
 
-COPY ./index.html /var/www/html
+COPY ./test.html /var/www/html
 
 #USER apache
 
